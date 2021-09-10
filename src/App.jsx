@@ -1,12 +1,20 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import {BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
+    <div className="pt-20">
       <Navbar />
-      <h1 className="bg-red-500 w-[200px]">Hello World</h1>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/about" component={About} exact />
+      </Switch>
     </div>
+    </BrowserRouter>
   )
 }
 
